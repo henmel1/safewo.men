@@ -25,4 +25,4 @@ This site was developed by a team of four consisting of Kevin Alegre, Henry Mell
 - Chris Zhong - Chief Visionary Officer
 - Justin Vogel - Lead Software Engineer
 - Henry Mellor - Senior Software Engineer
-- Keving Alegre - Intern Grunt lv. 5
+- Kevin Alegre - Intern Grunt lv. 5
