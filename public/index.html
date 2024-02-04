@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Walks Outside</title>
+    <link rel="icon" type="image/png" href="what.png">
+    <script src="main.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkRdvhpLfjSjGabwQCIvpfGIyQ2Ay9Yjo&callback=initMap">
+    </script>
+    <style>
+        body { margin: 0; }
+
+        #map {
+            width: 100%;
+            height: 80vh;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #directionsPanel {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body style="background-color: white; display: flex; flex-direction: column; align-items: center;">
+    <!-- First Row -->
+    <div style="display: flex; width: 100%; justify-content: space-between; padding: 20px; box-sizing: border-box;">
+        <!-- Column 1: Logo -->
+        <div style="width: 20%;">
+            <img src="logo.png" alt="Safe Navigation Map Logo" style="display: block; margin-bottom: 0px; height: 60px; width: 100%;">
+        </div>
+
+       <!-- Column 2: Starting Point -->
+        <div style="width: 23%; text-align: center; margin-left: 50px; margin-top: 17px; margin-bottom: 0px; font-family: Arial, sans-serif;">
+            <label for="origin" style="font-size: 14px;">Starting Point:</label>
+            <input type="text" id="origin" placeholder="Enter origin address" style="border-width: 1px; font-size: 14px; border-radius: 5px; padding: 5px;">
+        </div>
+
+        <!-- Column 3: Destination -->
+        <div style="width: 23%; text-align: center; margin-bottom: 10px; margin-top: 17px; margin-bottom: 0px; font-family: Arial, sans-serif;">
+            <label for="destination" style="font-size: 14px;">Destination:</label>
+            <input type="text" id="destination" placeholder="Enter destination address" style="border-width: 1px; font-size: 14px; border-radius: 5px; padding: 5px;">
+        </div>
+
+        <!-- Column 4: Directions Button -->
+        <div style="width: 34%; text-align: left; margin-left:25px; margin-top: 13px;">
+            <img src="directions.png" alt="Get Directions" id="submit" style="cursor: pointer; height: 35px; width: 110px">
+        </div>
+    </div>
+
+    <hr style="width: 100%; height: 3px; margin: 0; border: none; background-color: #ff30d4;">
+    <hr style="width: 100%; height: 2px; margin: 0; border: none; background-color: #7edaf2;">
+
+    <!-- Second Row: Map -->
+    <div id="map" style="width: 100%;"></div>
+
+    <hr style="width: 100%; height: 3px; margin: 0; border: none; background-color: #ff30d4;">
+    <hr style="width: 100%; height: 2px; margin: 0; border: none; background-color: #7edaf2;">
+
+    <!-- Directions Panel -->
+    <div id="directionsPanel"></div>
+</body>
+
+
