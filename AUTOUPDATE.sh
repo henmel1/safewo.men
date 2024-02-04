@@ -9,3 +9,4 @@ if [[ -n $(git status -s) ]]; then
 else
     echo "No changes found. Skip pulling."
 fi
+
