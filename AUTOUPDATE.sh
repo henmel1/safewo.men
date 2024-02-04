@@ -2,7 +2,7 @@
 
 cd $(dirname ${BASH_SOURCE[0]})
 
-if [[ -n $(git status) ]]; then
+if [[ $(git status) ]]; then
     echo "Changes found. Pulling changes..."
     git add -A && git commit -m 'update' && git fetch
     cp index.html /var/www/html
