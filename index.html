@@ -3,83 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Maps Routing</title>
+    <title>Safe Walks Outside</title>
+    <link rel="icon" type="image/png" href="what.png">
+    <script src="main.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkRdvhpLfjSjGabwQCIvpfGIyQ2Ay9Yjo&callback=initMap">
+    </script>
     <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
+        body { margin: 0; }
 
+        #map {
+            width: 100%;
+            height: 80vh;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
         #directionsPanel {
             margin-top: 10px;
         }
     </style>
 </head>
-<body>
-    <div>
-        <label for="origin">Origin:</label>
-        <input type="text" id="origin" placeholder="Enter origin address">
+<body style="background-color: white; display: flex; flex-direction: column; align-items: center;">
+    <!-- First Row -->
+    <div style="display: flex; width: 100%; justify-content: space-between; padding: 20px; box-sizing: border-box;">
+        <!-- Column 1: Logo -->
+        <div style="width: 20%;">
+            <img src="logo.png" alt="Safe Navigation Map Logo" style="display: block; margin-bottom: 0px; height: 60px; width: 100%;">
+        </div>
+
+       <!-- Column 2: Starting Point -->
+        <div style="width: 23%; text-align: center; margin-left: 50px; margin-top: 17px; margin-bottom: 0px; font-family: Arial, sans-serif;">
+            <label for="origin" style="font-size: 14px;">Starting Point:</label>
+            <input type="text" id="origin" placeholder="Enter origin address" style="border-width: 1px; font-size: 14px; border-radius: 5px; padding: 5px;">
+        </div>
+
+        <!-- Column 3: Destination -->
+        <div style="width: 23%; text-align: center; margin-bottom: 10px; margin-top: 17px; margin-bottom: 0px; font-family: Arial, sans-serif;">
+            <label for="destination" style="font-size: 14px;">Destination:</label>
+            <input type="text" id="destination" placeholder="Enter destination address" style="border-width: 1px; font-size: 14px; border-radius: 5px; padding: 5px;">
+        </div>
+
+        <!-- Column 4: Directions Button -->
+        <div style="width: 34%; text-align: left; margin-left:25px; margin-top: 13px;">
+            <img src="directions.png" alt="Get Directions" id="submit" style="cursor: pointer; height: 35px; width: 110px">
+        </div>
     </div>
-    <div>
-        <label style="font-family: Arial" for="destination">Destination:</label>
-        <input type="text" id="destination" placeholder="Enter destination address">
-    </div>
-    <div>
-        <button id="submit">Get Directions</button>
-    </div>
-    <div id="map"></div>
+
+    <hr style="width: 100%; height: 3px; margin: 0; border: none; background-color: #ff30d4;">
+    <hr style="width: 100%; height: 2px; margin: 0; border: none; background-color: #7edaf2;">
+
+    <!-- Second Row: Map -->
+    <div id="map" style="width: 100%;"></div>
+
+    <hr style="width: 100%; height: 3px; margin: 0; border: none; background-color: #ff30d4;">
+    <hr style="width: 100%; height: 2px; margin: 0; border: none; background-color: #7edaf2;">
+
+    <!-- Directions Panel -->
     <div id="directionsPanel"></div>
-
-    <script>
-        function initMap() {
-
-
-    const origin = { // Somewhere?
-        lat: 31.544256,
-        lng: 74.349402
-    }            
-            const apiKey = 'AIzaSyCkRdvhpLfjSjGabwQCIvpfGIyQ2Ay9Yjo'; // Replace with your actual API key
-
-            const mapOptions = {
-                center: { lat: 37.7749, lng: -122.4194 }, // Default to San Francisco
-                zoom: 12,
-            };
-
-            const map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-            const directionsService = new google.maps.DirectionsService();
-            const directionsRenderer = new google.maps.DirectionsRenderer({
-                map: map,
-                panel: document.getElementById('directionsPanel'),
-            });
-
-            document.getElementById('submit').addEventListener('click', function () {
-                calculateAndDisplayRoute(directionsService, directionsRenderer);
-            });
-        }
-
-        function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-            const origin = document.getElementById('origin').value;
-            const destination = document.getElementById('destination').value;
-
-            directionsService.route(
-                {
-                    origin: origin,
-                    destination: destination,
-                    travelMode: 'DRIVING',
-                },
-                function (response, status) {
-                    if (status === 'OK') {
-                        directionsRenderer.setDirections(response);
-                    } else {
-                        window.alert('Directions request failed due to ' + status);
-                    }
-                }
-            );
-        }
-
-        window.onload = initMap;
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkRdvhpLfjSjGabwQCIvpfGIyQ2Ay9Yjo&callback=initMap"></script>
 </body>
-</html>
+
+
