@@ -20,3 +20,9 @@ Safe Walks Outside is built using the following technologies:
 - Visit [safewo.men](https://safewo.men)
 - Input starting address and destination and find the safest route to walk!
 
+## Credits
+This site was developed by a team of four consisting of Kevin Alegre, Henry Mellor, Chris Zhong, Justin Vogel
+- Chris Zhong - Chief Visionary Officer
+- Justin Vogel - Lead Software Engineer
+- Henry Mellor - Senior Software Engineer
+- Keving Alegre - Intern Grunt lv. 5
