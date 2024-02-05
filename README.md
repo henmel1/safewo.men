@@ -23,6 +23,6 @@ Safe Walks Outside is built using the following technologies:
 ## Credits
 This site was developed by a team of four consisting of Kevin Alegre, Henry Mellor, Chris Zhong, Justin Vogel
 - Chris Zhong - Chief Visionary Officer
-- Justin Vogel - Lead Software Engineer
-- Henry Mellor - Senior Software Engineer
-- Kevin Alegre - Intern Grunt lv. 5
+- Justin Vogel - Software Engineer
+- Henry Mellor - Software Engineer
+- Kevin Alegre - Software Engineer
