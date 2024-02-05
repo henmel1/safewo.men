@@ -20,6 +20,21 @@ Safe Walks Outside is built using the following technologies:
 - Visit [safewo.men](https://safewo.men)
 - Input starting address and destination and find the safest route to walk!
 
+## Starting local instance
+To get started with a local instance hosted on localhost first, initialize npm and install webpack.
+```
+npm init -y 
+npm i -D webpack-dev-server webpack webpack-cli
+```
+Then, install deck.gl.
+```
+npm i @deck.gl/{core,google-maps,layers,aggregation-layers}
+```
+Finally, start the local instance.
+```
+npm start
+```
+
 ## Credits
 This site was developed by a team of four consisting of Kevin Alegre, Henry Mellor, Chris Zhong, Justin Vogel
 - Chris Zhong - Chief Visionary Officer
